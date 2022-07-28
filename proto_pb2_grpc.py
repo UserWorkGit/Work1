@@ -14,17 +14,17 @@ class GreeterStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.SayHello = channel.unary_unary(
-                '/Greeter/SayHello',
-                request_serializer=proto__pb2.HelloRequest.SerializeToString,
-                response_deserializer=proto__pb2.HelloReply.FromString,
+        self.Library = channel.unary_unary(
+                '/Greeter/Library',
+                request_serializer=proto__pb2.Request.SerializeToString,
+                response_deserializer=proto__pb2.Reply.FromString,
                 )
 
 
 class GreeterServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def SayHello(self, request, context):
+    def Library(self, request, context):
         """Sends a greeting
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -34,10 +34,10 @@ class GreeterServicer(object):
 
 def add_GreeterServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SayHello': grpc.unary_unary_rpc_method_handler(
-                    servicer.SayHello,
-                    request_deserializer=proto__pb2.HelloRequest.FromString,
-                    response_serializer=proto__pb2.HelloReply.SerializeToString,
+            'Library': grpc.unary_unary_rpc_method_handler(
+                    servicer.Library,
+                    request_deserializer=proto__pb2.Request.FromString,
+                    response_serializer=proto__pb2.Reply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -50,7 +50,7 @@ class Greeter(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def SayHello(request,
+    def Library(request,
             target,
             options=(),
             channel_credentials=None,
@@ -60,8 +60,8 @@ class Greeter(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Greeter/SayHello',
-            proto__pb2.HelloRequest.SerializeToString,
-            proto__pb2.HelloReply.FromString,
+        return grpc.experimental.unary_unary(request, target, '/Greeter/Library',
+            proto__pb2.Request.SerializeToString,
+            proto__pb2.Reply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

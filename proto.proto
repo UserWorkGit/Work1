@@ -1,15 +1,15 @@
 syntax = "proto3";
 service Greeter {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc Library (Request) returns (Reply) {}
 }
 
-// The request message containing the user's name.
-message HelloRequest {
+// The request message containing name of the book or author.
+message Request {
   string name = 1;
 }
 
-// The response message containing the greetings
-message HelloReply {
+// The response message containing an array of names.
+message Reply {
   string message = 1;
 }

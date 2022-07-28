@@ -14,34 +14,34 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bproto.proto\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t23\n\x07Greeter\x12(\n\x08SayHello\x12\r.HelloRequest\x1a\x0b.HelloReply\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bproto.proto\"\x17\n\x07Request\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x18\n\x05Reply\x12\x0f\n\x07message\x18\x01 \x01(\t2(\n\x07Greeter\x12\x1d\n\x07Library\x12\x08.Request\x1a\x06.Reply\"\x00\x62\x06proto3')
 
 
 
-_HELLOREQUEST = DESCRIPTOR.message_types_by_name['HelloRequest']
-_HELLOREPLY = DESCRIPTOR.message_types_by_name['HelloReply']
-HelloRequest = _reflection.GeneratedProtocolMessageType('HelloRequest', (_message.Message,), {
-  'DESCRIPTOR' : _HELLOREQUEST,
+_REQUEST = DESCRIPTOR.message_types_by_name['Request']
+_REPLY = DESCRIPTOR.message_types_by_name['Reply']
+Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), {
+  'DESCRIPTOR' : _REQUEST,
   '__module__' : 'proto_pb2'
-  # @@protoc_insertion_point(class_scope:HelloRequest)
+  # @@protoc_insertion_point(class_scope:Request)
   })
-_sym_db.RegisterMessage(HelloRequest)
+_sym_db.RegisterMessage(Request)
 
-HelloReply = _reflection.GeneratedProtocolMessageType('HelloReply', (_message.Message,), {
-  'DESCRIPTOR' : _HELLOREPLY,
+Reply = _reflection.GeneratedProtocolMessageType('Reply', (_message.Message,), {
+  'DESCRIPTOR' : _REPLY,
   '__module__' : 'proto_pb2'
-  # @@protoc_insertion_point(class_scope:HelloReply)
+  # @@protoc_insertion_point(class_scope:Reply)
   })
-_sym_db.RegisterMessage(HelloReply)
+_sym_db.RegisterMessage(Reply)
 
 _GREETER = DESCRIPTOR.services_by_name['Greeter']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _HELLOREQUEST._serialized_start=15
-  _HELLOREQUEST._serialized_end=43
-  _HELLOREPLY._serialized_start=45
-  _HELLOREPLY._serialized_end=74
-  _GREETER._serialized_start=76
-  _GREETER._serialized_end=127
+  _REQUEST._serialized_start=15
+  _REQUEST._serialized_end=38
+  _REPLY._serialized_start=40
+  _REPLY._serialized_end=64
+  _GREETER._serialized_start=66
+  _GREETER._serialized_end=106
 # @@protoc_insertion_point(module_scope)
