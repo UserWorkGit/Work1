@@ -6,11 +6,13 @@ import proto_pb2_grpc
 
 def run():
     print("Press 'Enter' to exit")
+    print("To clear queries, write 'clear'")
     name = input("Enter the name of the author or the title of the book: ")
     while len(name) != 0:
         if name == 'clear':
-            for i in range(10):
+            for i in range(50):
                 print()
+            name = '1'
         else:
             with grpc.insecure_channel('localhost:8080') as channel:
                 stub = proto_pb2_grpc.GreeterStub(channel)
@@ -28,6 +30,7 @@ def run():
                     print(name)
             print()
             print("Press 'Enter' to exit")
+            print("To clear queries, write 'clear'")
             name = input("Enter the name of the author or the title of the book: ")
 
 
